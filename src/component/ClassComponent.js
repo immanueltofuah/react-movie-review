@@ -12,7 +12,7 @@ export default class ClassComponent extends Component {
   }
   async getReview() {
     fetch(
-      `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${this.state.term}&api-key=vcxfMGWpn2o5XtPHCZAVlKuzlSW9FYG0`
+      `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${this.state.term}&api-key=YglynICO92Mi4lwJzAzTCRDBA0ATecfQ`
     )
       .then((response) => response.json())
       .then((review) => {
