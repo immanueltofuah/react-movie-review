@@ -6,6 +6,7 @@ import "./App.css";
     constructor() {
         super();
         this.state = { reviews: []};
+        this.state = { term: (anything)};
     
     }
     async getreviews() {

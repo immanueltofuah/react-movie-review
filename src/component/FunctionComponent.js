@@ -5,11 +5,12 @@ import "./App.css";
 function FunctionComponent() {
   //state which stores users
   const [reviews, setReviews] = useState([]);
+  const [term, setTerm] = useState("everything")
 
   //Asynchronous function which gets users from server
-  async function getreviews() {
+  async function getReviews() {
     //gets data using axios from url and stores it in res variable
-    const res = await axios.get(" `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${term}&api-key=YglynICO92Mi4lwJzAzTCRDBA0ATecfQ");
+    const res = await axios.get( `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${term}&api-key=YglynICO92Mi4lwJzAzTCRDBA0ATecfQ');
 
     //updates the users state to contain the response
     setReviews(res.data);
