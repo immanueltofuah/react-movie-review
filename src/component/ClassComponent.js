@@ -1,9 +1,8 @@
 
-
 import React, { Component } from 'react'
 import "./App.css";
 
-export default class ClassComponent extends Component {
+ class ClassComponent extends Component {
     constructor() {
         super();
         this.state = { reviews: []};
@@ -54,4 +53,5 @@ export default class ClassComponent extends Component {
         );
     }
 }
+
 export default ClassComponent;
