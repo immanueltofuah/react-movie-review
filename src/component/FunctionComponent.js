@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./App.css";
+
 
 function FunctionComponent() {
   //state which stores users
@@ -10,8 +10,9 @@ function FunctionComponent() {
   //Asynchronous function which gets users from server
   async function getReviews() {
     //gets data using axios from url and stores it in res variable
-    const res = await axios.get( `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${term}&api-key=YglynICO92Mi4lwJzAzTCRDBA0ATecfQ`);
-
+    const res = await axios.get( `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${term}&api-key=YglynICO92Mi4lwJzAzTCRDBA0ATecfQ`)
+    console.log(res);;
+    
     //updates the users state to contain the response
     setReviews(res.data);
   }
@@ -19,7 +20,7 @@ function FunctionComponent() {
   //hook to use lifecycle methods in functional component
   useEffect(() => {
     //calls getUsers function when component is first mounted
-    getrev();
+    getReviews();
 
     //gets called when the component is about to be unmounted
     return () => {
@@ -32,7 +33,7 @@ function FunctionComponent() {
     <>
       {
         //maps through the users state and renders an h1 containing the user's name
-        users.map((user) => {
+        reviews.map((reviews) => {
           return (
             <div className="back" key={reviews.id}>
               <h1 className="inputs">{reviews.byline}</h1>

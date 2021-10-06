@@ -1,12 +1,14 @@
 
 import React, { Component } from 'react'
-import "./App.css";
+
 
  class ClassComponent extends Component {
     constructor() {
         super();
-        this.state = { reviews: []};
-        this.state = { term: (anything)};
+        this.state = { reviews: [],
+                        term:"everything",
+        };
+        
     
     }
     async getreviews() {
