@@ -11,10 +11,9 @@ function FunctionComponent() {
   async function getReviews() {
     //gets data using axios from url and stores it in res variable
     const res = await axios.get( `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${term}&api-key=YglynICO92Mi4lwJzAzTCRDBA0ATecfQ`)
-    console.log(res);;
     
     //updates the users state to contain the response
-    setReviews(res.data);
+    setReviews(res.data.results);
   }
 
   //hook to use lifecycle methods in functional component
@@ -33,12 +32,12 @@ function FunctionComponent() {
     <>
       {
         //maps through the users state and renders an h1 containing the user's name
-        reviews.map((reviews) => {
+        reviews.map((reviews, index) => {
           return (
-            <div className="back" key={reviews.id}>
+            <div className="back" key={index}>
               <h1 className="inputs">{reviews.byline}</h1>
-              <h1 className="inputs">{reviews.critic.pick}</h1>
-              <h1 className="inputs">{reviews.title}</h1>
+              <h1 className="inputs">{reviews.critics_pick}</h1>
+              <h1 className="inputs">{reviews.display_title}</h1>
               <h1 className="inputs">{reviews.headline}</h1>
 
             </div>

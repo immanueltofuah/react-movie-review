@@ -21,7 +21,8 @@ import React, { Component } from 'react'
         })
         .then((reviews) => {
 
-            this.setState({ reviews: reviews});
+            this.setState({ reviews: reviews.results});
+            console.log(reviews);
         });
     }
 
@@ -39,14 +40,14 @@ import React, { Component } from 'react'
     render() {
         return(
             <>
-            {this.state.reviews.map((reviews) => {
+            {this.state.reviews.map((reviews,index) => {
                 return(
                     
-                    <div className="background"  key={reviews.id}>
+                    <div className="background"  key={reviews.index}>
                 <h1 className="component">Class Component</h1>
                  <h1 className="inputs">{reviews.byline}</h1>
                  <h1 className="inputs">{reviews.critic_pick}</h1>
-                 <h1 className="inputs">{reviews.title}</h1>
+                 <h1 className="inputs">{reviews.display_title}</h1>
                  <h1 className="inputs">{reviews.headline}</h1>
 
                  </div>
