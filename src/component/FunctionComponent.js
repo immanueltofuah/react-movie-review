@@ -30,15 +30,16 @@ function FunctionComponent() {
 
   return (
     <>
+    <h1 className="function">Function Component</h1>
       {
         //maps through the users state and renders an h1 containing the user's name
         reviews.map((reviews, index) => {
           return (
             <div className="back" key={index}>
-              <h1 className="inputs">{reviews.byline}</h1>
-              <h1 className="inputs">{reviews.critics_pick}</h1>
-              <h1 className="inputs">{reviews.display_title}</h1>
-              <h1 className="inputs">{reviews.headline}</h1>
+              <h1 className="inputs">Byline: {reviews.byline}</h1>
+              <h1 className="inputs">Critics_pick: {reviews.critics_pick}</h1>
+              <h1 className="inputs">Title: {reviews.display_title}</h1>
+              <h1 className="inputs">Headline: {reviews.headline}</h1>
 
             </div>
           );

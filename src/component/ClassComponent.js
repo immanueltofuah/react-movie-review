@@ -40,15 +40,16 @@ import React, { Component } from 'react'
     render() {
         return(
             <>
+            <h1 className="component">Class Component</h1>
             {this.state.reviews.map((reviews,index) => {
                 return(
                     
                     <div className="background"  key={reviews.index}>
-                <h1 className="component">Class Component</h1>
-                 <h1 className="inputs">{reviews.byline}</h1>
-                 <h1 className="inputs">{reviews.critic_pick}</h1>
-                 <h1 className="inputs">{reviews.display_title}</h1>
-                 <h1 className="inputs">{reviews.headline}</h1>
+                
+                 <h1 className="inputs">Byline: {reviews.byline}</h1>
+                 <h1 className="inputs">Critic_pick: {reviews.critic_pick}</h1>
+                 <h1 className="inputs">Title: {reviews.display_title}</h1>
+                 <h1 className="inputs">Headline: {reviews.headline}</h1>
 
                  </div>
             )
